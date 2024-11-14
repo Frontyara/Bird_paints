@@ -12,18 +12,22 @@ export default function Nav() {
             <div className="nav__content">
                 <div className="logo"><span>Ink. House</span></div>
                 <div className="line"></div>
-                <div className="nav__items">
+                <ul className="nav__items">
                     {contextItem.map((item, index) => {
                         return (
-                            <NavLink to={item.to} key={index} className="item"><span>{item.text}</span></NavLink>
+                            <li className="item">
+                                <NavLink to={item.to} key={index} className="navLink"><span>{item.text}</span></NavLink>
+                            </li>
                         )
                     })}
                     {contextItemLogo.map((item, index) => {
                         return (
-                            <NavLink key={index} to={item.to}><img src={item.src} alt="src" className="img" /></NavLink>
+                            <li>
+                                <NavLink key={index} to={item.to}><img src={item.src} alt="src" className="img" /></NavLink>
+                            </li>
                         )
                     })}
-                </div>
+                </ul>
             </div>
         </div>
     )

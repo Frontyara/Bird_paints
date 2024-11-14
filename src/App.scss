@@ -53,6 +53,10 @@ body {
       .item {
         @include font__color_size_weight_line(#2C2D35, 20px, 500, 23.48px);
         margin-right: 60px;
+
+        .navLink {
+          color: #2C2D35;
+        }
       }
     }
   }
@@ -74,8 +78,10 @@ body {
 
 @media (max-width:720px) {
   .nav {
+    height: 123px;
+
     .nav__content {
-      height: 100px;
+      height: 123px;
       margin: 0 auto;
       width: max(510px, 88.542vw);
       display: flex;
@@ -87,6 +93,42 @@ body {
         width: 510px;
         height: 1px;
         background-color: #C3D1C6;
+      }
+    }
+  }
+}
+
+@media (max-width:509px) {
+  .nav {
+    height: 130px;
+
+    .nav__content {
+      height: 130px;
+      margin: 0 auto;
+      width: max(290px, 88.542vw);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      .logo {
+        height: 68px;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+
+        span {
+          position: relative;
+          top: 10px;
+        }
+      }
+
+      .line {
+        width: 0px;
+        height: 0px;
       }
     }
   }
