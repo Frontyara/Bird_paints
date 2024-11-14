@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Tiny5&display=swap');
+
+body {
+  font-family: "Raleway", serif;
+}
+
+//mixins
+
+@mixin font__color_size_weight_line($a, $b, $c, $d) {
+  color: $a;
+  font-size: $b;
+  font-weight: $c;
+  line-height: $d;
+}
+
+//mixins
+
+.nav {
+  background-color: #E1EDE6;
+  position: fixed;
+  width: 100vw;
+  height: 100px;
+
+  .nav__content {
+    height: 100px;
+    margin: 0 auto;
+    width: min(1100px, 77.083vw);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      position: relative;
+      bottom: 10px;
+
+      &::before {
+        content: url('./components/nav/assets/Star\ 1.svg');
+        position: relative;
+        top: 10px;
+        margin-right: 8px;
+      }
+
+      @include font__color_size_weight_line(#598D66, 20px, 700, 23.48px);
+    }
+
+    .nav__items {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      .item {
+        @include font__color_size_weight_line(#2C2D35, 20px, 500, 23.48px);
+        margin-right: 60px;
+      }
+    }
+  }
+}
+
+@media (max-width:880px) {
+  .nav {
+    .nav__content {
+      height: 100px;
+      margin: 0 auto;
+      width: max(690px, 89.844vw);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width:720px) {
+  .nav {
+    .nav__content {
+      height: 100px;
+      margin: 0 auto;
+      width: max(510px, 88.542vw);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      .line {
+        width: 510px;
+        height: 1px;
+        background-color: #C3D1C6;
+      }
+    }
+  }
+}
